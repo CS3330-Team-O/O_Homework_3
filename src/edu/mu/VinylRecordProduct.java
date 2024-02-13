@@ -13,7 +13,7 @@ public class VinylRecordProduct extends MediaProduct {
 		super.genre = genre;
 	}
 
-	public copy(VinylRecordProduct vrp) {
+	public void copy(VinylRecordProduct vrp) {
 		this.title = vrp.title;
 		this.price = vrp.price;
 		this.year = vrp.year;

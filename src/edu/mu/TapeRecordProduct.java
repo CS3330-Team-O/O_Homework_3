@@ -13,7 +13,7 @@ public class TapeRecordProduct extends MediaProduct {
 		super.genre = genre;
 	}
 	
-	public copy(TapeRecordProduct trp) {
+	public void copy(TapeRecordProduct trp) {
 		this.title = trp.title;
 		this.price = trp.price;
 		this.year = trp.year;

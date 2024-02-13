@@ -13,7 +13,7 @@ public class CDRecordProduct extends MediaProduct {
 		super.genre = genre;
 	}
 	
-	public copy(CDRecordProduct cdrp) {
+	public void copy(CDRecordProduct cdrp) {
 		this.title = cdrp.title;
 		this.price = cdrp.price;
 		this.year = cdrp.year;
