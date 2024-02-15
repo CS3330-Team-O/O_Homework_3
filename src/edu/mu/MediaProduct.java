@@ -1,6 +1,13 @@
 package edu.mu;
 
 public class MediaProduct {
+	protected String type;
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
 	protected String title;
 	protected double price;
 	protected int year;

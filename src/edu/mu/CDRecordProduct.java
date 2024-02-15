@@ -6,7 +6,8 @@ public class CDRecordProduct extends MediaProduct {
 		
 	}
 	
-	public CDRecordProduct(String title, double price, int year, Genre genre) {
+	public CDRecordProduct(String type, String title, double price, int year, Genre genre) {
+		super.type = type;
 		super.title = title;
 		super.price = price;
 		super.year = year;
@@ -14,6 +15,7 @@ public class CDRecordProduct extends MediaProduct {
 	}
 	
 	public void copy(CDRecordProduct cdrp) {
+		this.type = cdrp.type;
 		this.title = cdrp.title;
 		this.price = cdrp.price;
 		this.year = cdrp.year;

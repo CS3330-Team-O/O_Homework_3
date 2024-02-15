@@ -63,5 +63,43 @@ public class StockManagerSingleton {
 				return false;
 			}
 		}
+		
+		public ArrayList<VinylRecordProduct> getVinylRecordList(ArrayList<MediaProduct> productList){
+			
+			ArrayList<VinylRecordProduct> vinyl = new ArrayList<>();
+			for(int i=0; i<productList.size(); i++) {
+				VinylRecordProduct curr = (VinylRecordProduct) productList.get(i);
+				if(curr.getType()=="Vinyl") {
+					vinyl.add(curr);
+				}
+			}
+			
+			return vinyl;
+		}
+		
+		public ArrayList<CDRecordProduct> getCDRecordsList(ArrayList<MediaProduct> productList){
+			ArrayList<CDRecordProduct> cd = new ArrayList<>();
+			for(int i=0; i<productList.size(); i++) {
+				CDRecordProduct curr = (CDRecordProduct) productList.get(i);
+				if(curr.getType()=="CD") {
+					cd.add(curr);
+				}
+			}
+			
+			return cd;
+		}
+		
+		public ArrayList<TapeRecordProduct> getTapeRecordList(ArrayList<MediaProduct> productList){
+			ArrayList<TapeRecordProduct> tape = new ArrayList<>();
+			for(int i=0; i<productList.size(); i++) {
+				TapeRecordProduct curr = (TapeRecordProduct) productList.get(i);
+				if(curr.getType()=="Tape") {
+					tape.add(curr);
+				}
+			}
+			
+			return tape;
+		}
+		
 
 }
