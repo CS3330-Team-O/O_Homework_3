@@ -1,10 +1,13 @@
 package edu.mu;
-
+import java.io.BufferedReader;  
+import java.io.FileReader;  
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class StockManagerSingleton {
 	private String inventoryFilePath;
 	private ArrayList<MediaProduct> inventory = new ArrayList<>();
+	private static MediaProduct[] mediaProduct;
 	
 		//Updates the price of the given media product to the newPrice.
 		//Returns true if the update is successful, false otherwise
@@ -42,4 +45,23 @@ public class StockManagerSingleton {
 				return false;
 			}	
 		}
+		
+		//Referenced from: https://www.javatpoint.com/how-to-read-csv-file-in-java
+		public boolean initializeStock() {
+			String line = "";  
+			String split = ",";  
+			try {
+				BufferedReader br = new BufferedReader(new FileReader("inventory.csv"));  
+				while ((line = br.readLine()) != null) {  
+				String[] employee = line.split(split); 
+				System.out.println("Type: " + employee[0] + ", Title: " + employee[1] + ", Price: " + employee[2] + ",Year: " + employee[3] + ", Genre: " + employee[4]);
+				}  
+				return true;
+			} catch (IOException e) {
+				System.out.println("File Not Found");
+				e.printStackTrace();
+				return false;
+			}
+		}
+
 }
