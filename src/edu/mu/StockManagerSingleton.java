@@ -65,11 +65,15 @@ public class StockManagerSingleton {
 		}
 		
 		public ArrayList<VinylRecordProduct> getVinylRecordList(ArrayList<MediaProduct> productList){
+			if (productList == null || productList.isEmpty()) {
+				System.out.println("There are no products in this list!");
+				return new ArrayList<>();
+			}
 			
 			ArrayList<VinylRecordProduct> vinyl = new ArrayList<>();
 			for(int i=0; i<productList.size(); i++) {
 				VinylRecordProduct curr = (VinylRecordProduct) productList.get(i);
-				if(curr.getType()=="Vinyl") {
+				if("Vinyl".equals(curr.getType())) {
 					vinyl.add(curr);
 				}
 			}
@@ -78,10 +82,14 @@ public class StockManagerSingleton {
 		}
 		
 		public ArrayList<CDRecordProduct> getCDRecordsList(ArrayList<MediaProduct> productList){
+			if (productList == null || productList.isEmpty()) {
+				System.out.println("There are no products in this list!");
+				return new ArrayList<>();
+			}
 			ArrayList<CDRecordProduct> cd = new ArrayList<>();
 			for(int i=0; i<productList.size(); i++) {
 				CDRecordProduct curr = (CDRecordProduct) productList.get(i);
-				if(curr.getType()=="CD") {
+				if("CD".equals(curr.getType())) {
 					cd.add(curr);
 				}
 			}
@@ -90,10 +98,15 @@ public class StockManagerSingleton {
 		}
 		
 		public ArrayList<TapeRecordProduct> getTapeRecordList(ArrayList<MediaProduct> productList){
+			if (productList == null || productList.isEmpty()) {
+				System.out.println("There are no products in this list!");
+				return new ArrayList<>();
+			}
+			
 			ArrayList<TapeRecordProduct> tape = new ArrayList<>();
 			for(int i=0; i<productList.size(); i++) {
 				TapeRecordProduct curr = (TapeRecordProduct) productList.get(i);
-				if(curr.getType()=="Tape") {
+				if("Tape".equals(curr.getType())) {
 					tape.add(curr);
 				}
 			}
