@@ -47,6 +47,10 @@ public class StockManagerSingleton {
 		}
 		
 		
+		public void printListOfMediaProduct(ArrayList<MediaProduct> productList) {
+			System.out.println(productList);
+		}
+		
 		//Referenced from: https://www.javatpoint.com/how-to-read-csv-file-in-java
 		public boolean initializeStock() {
 			String line = "";  
