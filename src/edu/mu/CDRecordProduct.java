@@ -6,8 +6,8 @@ public class CDRecordProduct extends MediaProduct {
 		
 	}
 	
-	public CDRecordProduct(String type, String title, double price, int year, Genre genre) {
-		super.type = type;
+	public CDRecordProduct(String title, double price, int year, Genre genre) {
+		super.type = "CD";
 		super.title = title;
 		super.price = price;
 		super.year = year;

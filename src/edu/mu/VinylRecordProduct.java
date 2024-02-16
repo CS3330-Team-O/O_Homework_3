@@ -6,8 +6,8 @@ public class VinylRecordProduct extends MediaProduct {
 
 	}
 
-	public VinylRecordProduct(String type, String title, double price, int year, Genre genre) {
-		super.type = type;
+	public VinylRecordProduct(String title, double price, int year, Genre genre) {
+		super.type = "Vinyl";
 		super.title = title;
 		super.price = price;
 		super.year = year;

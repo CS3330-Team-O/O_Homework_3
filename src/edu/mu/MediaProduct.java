@@ -38,29 +38,22 @@ public class MediaProduct {
 	public void setGenre(Genre genre) {
 		this.genre = genre;
 	}
-	public void setGenre(String genre) {
+	public static Genre convertStringToGenre(String genre) {
 		switch (genre) {
 			case "POP": 
-				this.genre = Genre.POP;
-				break;
+				return Genre.POP;
 			case "CLASSICAL":
-				this.genre = Genre.CLASSICAL;
-				break;
+				return Genre.CLASSICAL;
 			case "HIP_HOP":
-				this.genre = Genre.HIP_HOP;
-				break;
+				return Genre.HIP_HOP;
 			case "ROCK":
-				this.genre = Genre.ROCK;
-				break;
+				return Genre.ROCK;
 			case "JAZZ":
-				this.genre = Genre.JAZZ;
-				break;
+				return Genre.JAZZ;
 			case "ELECTRONIC":
-				this.genre = Genre.ELECTRONIC;
-				break;
+				return Genre.ELECTRONIC;
 		}
-		
-		//this.genre = genre;
+		return Genre.CLASSICAL;
 	}
 	public boolean equals(MediaProduct product) {
 		if (this.title == product.title && this.price == product.price && this.year == product.year && this.genre == product.genre) {

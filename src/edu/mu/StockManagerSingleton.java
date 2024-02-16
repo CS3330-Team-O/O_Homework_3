@@ -67,6 +67,7 @@ public class StockManagerSingleton {
 				String title = mp[1];
 				double price = Double.parseDouble(mp[2]);
 				int year = Integer.parseInt(mp[3]);
+				Genre genre = MediaProduct.convertStringToGenre(mp[3]);
 				switch(mp[0]) {
 					case "CD":
 						CDRecordProduct cd = new CDRecordProduct(title, price, year, genre);
@@ -155,6 +156,32 @@ public class StockManagerSingleton {
 			
 			return true;
 		}
+		
+		public ArrayList<MediaProduct> getMediaProductBelowPrice (int maxPrice) {
+			ArrayList<MediaProduct> mediaProductsBelowPrice = new ArrayList<MediaProduct>();
+			for (int i = 0; i < this.inventory.size(); i++) {
+				if (this.inventory.get(i).getPrice() <= maxPrice) {
+					mediaProductsBelowPrice.add(this.inventory.get(i));
+				}
+			}
+			return mediaProductsBelowPrice;
+		}
+		
+		public void printListOfMediaProduct(ArrayList<MediaProduct> mp) {
+			for (int i = 0; i < mp.size(); i++) {
+				System.out.println("Type: " + mp.get(i).getType() + ", Title: " + mp.get(i).getTitle() + ", Price: " + mp.get(i).getPrice() + ", Year: " + mp.get(i).getYear() + ", Genre: " + mp.get(i).getGenre());
+			}
+			
+		}
+		
+		public ArrayList<MediaProduct> getInventory() {
+			return inventory;
+		}
+
+		public void setInventory(ArrayList<MediaProduct> inventory) {
+			this.inventory = inventory;
+		}
+		
 		
 
 }
