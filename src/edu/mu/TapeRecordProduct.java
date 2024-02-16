@@ -6,8 +6,8 @@ public class TapeRecordProduct extends MediaProduct {
 		
 	}
 	
-	public TapeRecordProduct(String type, String title, double price, int year, Genre genre) {
-		super.type = type;
+	public TapeRecordProduct(String title, double price, int year, Genre genre) {
+		super.type = "Tape";
 		super.title = title;
 		super.price = price;
 		super.year = year;
