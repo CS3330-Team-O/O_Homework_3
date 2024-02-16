@@ -46,6 +46,7 @@ public class StockManagerSingleton {
 			}	
 		}
 		
+		
 		//Referenced from: https://www.javatpoint.com/how-to-read-csv-file-in-java
 		public boolean initializeStock() {
 			String line = "";  
@@ -53,8 +54,21 @@ public class StockManagerSingleton {
 			try {
 				BufferedReader br = new BufferedReader(new FileReader("inventory.csv"));  
 				while ((line = br.readLine()) != null) {  
-				String[] employee = line.split(split); 
-				System.out.println("Type: " + employee[0] + ", Title: " + employee[1] + ", Price: " + employee[2] + ",Year: " + employee[3] + ", Genre: " + employee[4]);
+				String[] mp = line.split(split); 
+				String title = mp[1];
+				double price = Double.parseDouble(mp[2]);
+				int year = Integer.parseInt(mp[3]);
+				switch(mp[0]) {
+					case "CD":
+						CDRecordProduct cd = new CDRecordProduct(title, price, year, genre);
+					case"Vinyl":
+						VinylRecordProduct vinyl = new VinylRecordProduct(title, price, year, genre);
+					case "Tape":
+						TapeRecordProduct tape = new TapeRecordProduct(title, price, year, genre);
+					default:
+						
+				}
+				
 				}  
 				return true;
 			} catch (IOException e) {
