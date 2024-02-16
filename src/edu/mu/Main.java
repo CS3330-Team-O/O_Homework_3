@@ -6,8 +6,6 @@ public class Main {
 	  System.out.println("IN MAIN");
 	  StockManagerSingleton stockManagerSingleton = new StockManagerSingleton();
 	  boolean fileReadStatus = stockManagerSingleton.initializeStock();
-	  
-	  
   }
 
 }
