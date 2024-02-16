@@ -39,6 +39,26 @@ public class MediaProduct {
 		this.genre = genre;
 	}
 	public void setGenre(String genre) {
+		switch (genre) {
+			case "POP": 
+				this.genre = Genre.POP;
+				break;
+			case "CLASSICAL":
+				this.genre = Genre.CLASSICAL;
+				break;
+			case "HIP_HOP":
+				this.genre = Genre.HIP_HOP;
+				break;
+			case "ROCK":
+				this.genre = Genre.ROCK;
+				break;
+			case "JAZZ":
+				this.genre = Genre.JAZZ;
+				break;
+			case "ELECTRONIC":
+				this.genre = Genre.ELECTRONIC;
+				break;
+		}
 		
 		//this.genre = genre;
 	}
