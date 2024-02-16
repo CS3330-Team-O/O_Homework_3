@@ -66,9 +66,8 @@ public class StockManagerSingleton {
 					case "Tape":
 						TapeRecordProduct tape = new TapeRecordProduct(title, price, year, genre);
 					default:
-						
+						break;
 				}
-				
 				}  
 				return true;
 			} catch (IOException e) {
