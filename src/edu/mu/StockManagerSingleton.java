@@ -7,15 +7,18 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class StockManagerSingleton {
-	private String inventoryFilePath;
+	private String inventoryFilePath = "inventory.csv";
 	private ArrayList<MediaProduct> inventory = new ArrayList<>();
-	private static MediaProduct[] mediaProduct;
 	
 		//Updates the price of the given media product to the newPrice.
 		//Returns true if the update is successful, false otherwise
 		public boolean updateItemPrice(MediaProduct product, double newPrice) {
 			try {
-				product.setPrice(newPrice);
+				for(int i = 0; i < inventory.size(); ++i) {
+					if(this.inventory.get(i).equals(product)) {
+						inventory.get(i).setPrice(newPrice);
+					}
+				}
 				return true;
 			}catch(Exception e) {
 				return false;
@@ -58,7 +61,7 @@ public class StockManagerSingleton {
 			String line = "";  
 			String split = ",";  
 			try {
-				BufferedReader br = new BufferedReader(new FileReader("inventory.csv"));  
+				BufferedReader br = new BufferedReader(new FileReader(inventoryFilePath));  
 				while ((line = br.readLine()) != null) {  
 				String[] mp = line.split(split); 
 				String title = mp[1];
