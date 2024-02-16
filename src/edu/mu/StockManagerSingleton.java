@@ -96,7 +96,7 @@ public class StockManagerSingleton {
 			}
 			ArrayList<VinylRecordProduct> vinyl = new ArrayList<>();
 			for(int i=0; i<productList.size(); i++) {
-				VinylRecordProduct curr = (VinylRecordProduct) productList.get(i);
+				VinylRecordProduct curr = productList.get(i);
 				if("Vinyl".equals(curr.getType())) {
 					vinyl.add(curr);
 				}
@@ -113,7 +113,7 @@ public class StockManagerSingleton {
 			}
 			ArrayList<CDRecordProduct> cd = new ArrayList<>();
 			for(int i=0; i<productList.size(); i++) {
-				CDRecordProduct curr = (CDRecordProduct) productList.get(i);
+				CDRecordProduct curr = productList.get(i);
 				if("CD".equals(curr.getType())) {
 					cd.add(curr);
 				}
@@ -130,7 +130,7 @@ public class StockManagerSingleton {
 			
 			ArrayList<TapeRecordProduct> tape = new ArrayList<>();
 			for(int i=0; i<productList.size(); i++) {
-				TapeRecordProduct curr = (TapeRecordProduct) productList.get(i);
+				TapeRecordProduct curr = productList.get(i);
 				if("Tape".equals(curr.getType())) {
 					tape.add(curr);
 				}
