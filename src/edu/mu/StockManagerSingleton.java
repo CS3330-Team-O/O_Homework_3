@@ -49,6 +49,10 @@ public class StockManagerSingleton {
 		}
 		
 		
+		public void printListOfMediaProduct(ArrayList<MediaProduct> productList) {
+			System.out.println(productList);
+		}
+		
 		//Referenced from: https://www.javatpoint.com/how-to-read-csv-file-in-java
 		public boolean initializeStock() {
 			String line = "";  
@@ -63,12 +67,15 @@ public class StockManagerSingleton {
 				switch(mp[0]) {
 					case "CD":
 						CDRecordProduct cd = new CDRecordProduct(title, price, year, genre);
+						inventory.add(cd);
 					case"Vinyl":
 						VinylRecordProduct vinyl = new VinylRecordProduct(title, price, year, genre);
+						inventory.add(vinyl);
 					case "Tape":
 						TapeRecordProduct tape = new TapeRecordProduct(title, price, year, genre);
+						inventory.add(tape);
 					default:
-						
+						break;
 				}
 				}  
 				return true;
