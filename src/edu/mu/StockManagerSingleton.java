@@ -1,5 +1,7 @@
 package edu.mu;
 import java.io.BufferedReader;  
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.io.FileReader;  
 import java.io.IOException;
 import java.util.ArrayList;
@@ -51,10 +53,11 @@ public class StockManagerSingleton {
 			String line = "";  
 			String split = ",";  
 			try {
-				BufferedReader br = new BufferedReader(new FileReader("inventory.csv"));  
-				while ((line = br.readLine()) != null) {  
+				BufferedReader br = new BufferedReader(new FileReader("inventory.csv")); 
+				while ((line = br.readLine()) != null) {
+				
 				String[] employee = line.split(split); 
-				System.out.println("Type: " + employee[0] + ", Title: " + employee[1] + ", Price: " + employee[2] + ",Year: " + employee[3] + ", Genre: " + employee[4]);
+				System.out.println("Type: " + employee[0] + ", Title: " + employee[1] + ", Price: " + employee[2] + ", Year: " + employee[3] + ", Genre: " + employee[4]);
 				}  
 				return true;
 			} catch (IOException e) {
@@ -112,6 +115,23 @@ public class StockManagerSingleton {
 			}
 			
 			return tape;
+		}
+		
+		public boolean saveStock() {
+			FileWriter fw;
+			try {
+				fw = new FileWriter("inventory.csv");
+				BufferedWriter bwr = new BufferedWriter(fw);
+				for (int i = 0; i < this.inventory.size(); i++) {
+					bwr.write(this.inventory.get(i).getType() + "," + this.inventory.get(i).getTitle() + "," + this.inventory.get(i).getPrice() + "," + this.inventory.get(i).getYear() + "," + this.inventory.get(i).getGenre() + "\n");
+				}
+				bwr.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			} 
+			
+			
+			return true;
 		}
 		
 

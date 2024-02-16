@@ -1,18 +1,19 @@
 package edu.mu;
 
 public class MediaProduct {
+	
 	protected String type;
+	protected String title;
+	protected double price;
+	protected int year;
+	protected Genre genre;
+	
 	public String getType() {
 		return type;
 	}
 	public void setType(String type) {
 		this.type = type;
 	}
-	protected String title;
-	protected double price;
-	protected int year;
-	protected Genre genre;
-	
 	public String getTitle() {
 		return title;
 	}
@@ -36,6 +37,10 @@ public class MediaProduct {
 	}
 	public void setGenre(Genre genre) {
 		this.genre = genre;
+	}
+	public void setGenre(String genre) {
+		
+		//this.genre = genre;
 	}
 	public boolean equals(MediaProduct product) {
 		if (this.title == product.title && this.price == product.price && this.year == product.year && this.genre == product.genre) {
