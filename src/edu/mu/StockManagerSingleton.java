@@ -69,13 +69,13 @@ public class StockManagerSingleton {
 				System.out.println("There are no products in this list!");
 				return new ArrayList<>();
 			}
-			
 			ArrayList<VinylRecordProduct> vinyl = new ArrayList<>();
 			for(int i=0; i<productList.size(); i++) {
 				VinylRecordProduct curr = (VinylRecordProduct) productList.get(i);
 				if("Vinyl".equals(curr.getType())) {
 					vinyl.add(curr);
 				}
+				
 			}
 			
 			return vinyl;
