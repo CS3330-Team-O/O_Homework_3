@@ -65,10 +65,13 @@ public class StockManagerSingleton {
 				switch(mp[0]) {
 					case "CD":
 						CDRecordProduct cd = new CDRecordProduct(title, price, year, genre);
+						inventory.add(cd);
 					case"Vinyl":
 						VinylRecordProduct vinyl = new VinylRecordProduct(title, price, year, genre);
+						inventory.add(vinyl);
 					case "Tape":
 						TapeRecordProduct tape = new TapeRecordProduct(title, price, year, genre);
+						inventory.add(tape);
 					default:
 						break;
 				}
