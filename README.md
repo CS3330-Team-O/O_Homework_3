@@ -52,4 +52,4 @@ MediaProduct class represents individual media products including CD, Tape, and 
 <br />
 *public boolean saveStock() 
 <h3>Description:</h3>
-<span>StockManagerSingleton allows admins to perform query and modifying operations on the MediaProduct inventory as well as printing the list of MediaProducts that are given.span>
+<span>StockManagerSingleton allows admins to perform query and modifying operations on the MediaProduct inventory as well as printing the list of MediaProducts that are given.</span>
