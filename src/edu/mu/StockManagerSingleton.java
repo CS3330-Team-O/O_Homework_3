@@ -92,9 +92,9 @@ public class StockManagerSingleton {
 			}
 			ArrayList<VinylRecordProduct> vinyl = new ArrayList<>();
 			for(int i=0; i<productList.size(); i++) {
-				VinylRecordProduct curr = (VinylRecordProduct) productList.get(i);
-				if("Vinyl".equals(curr.getType())) {
-					vinyl.add(curr);
+				
+				if("Vinyl".equals(productList.get(i).getType())) {
+					vinyl.add((VinylRecordProduct) productList.get(i));
 				}
 				
 			}
@@ -109,9 +109,8 @@ public class StockManagerSingleton {
 			}
 			ArrayList<CDRecordProduct> cd = new ArrayList<>();
 			for(int i=0; i<productList.size(); i++) {
-				CDRecordProduct curr = (CDRecordProduct) productList.get(i);
-				if("CD".equals(curr.getType())) {
-					cd.add(curr);
+				if("CD".equals(productList.get(i).getType())) {
+					cd.add((CDRecordProduct) productList.get(i));
 				}
 			}
 			
@@ -126,9 +125,8 @@ public class StockManagerSingleton {
 			
 			ArrayList<TapeRecordProduct> tape = new ArrayList<>();
 			for(int i=0; i<productList.size(); i++) {
-				TapeRecordProduct curr = (TapeRecordProduct) productList.get(i);
-				if("Tape".equals(curr.getType())) {
-					tape.add(curr);
+				if("Tape".equals(productList.get(i).getType())) {
+					tape.add((TapeRecordProduct) productList.get(i));
 				}
 			}
 			
@@ -138,7 +136,7 @@ public class StockManagerSingleton {
 		public boolean saveStock() {
 			FileWriter fw;
 			try {
-				fw = new FileWriter("inventory.csv");
+				fw = new FileWriter(inventoryFilePath);
 				BufferedWriter bwr = new BufferedWriter(fw);
 				for (int i = 0; i < this.inventory.size(); i++) {
 					bwr.write(this.inventory.get(i).getType() + "," + this.inventory.get(i).getTitle() + "," + this.inventory.get(i).getPrice() + "," + this.inventory.get(i).getYear() + "," + this.inventory.get(i).getGenre() + "\n");
@@ -162,9 +160,9 @@ public class StockManagerSingleton {
 			return mediaProductsBelowPrice;
 		}
 		
-		public void printListOfMediaProduct(ArrayList<MediaProduct> mp) {
-			for (int i = 0; i < mp.size(); i++) {
-				System.out.println("Type: " + mp.get(i).getType() + ", Title: " + mp.get(i).getTitle() + ", Price: " + mp.get(i).getPrice() + ", Year: " + mp.get(i).getYear() + ", Genre: " + mp.get(i).getGenre());
+		public void printListOfMediaProduct(ArrayList<MediaProduct> productList) {
+			for (int i = 0; i < productList.size(); i++) {
+				System.out.println("Type: " + productList.get(i).getType() + ", Title: " + productList.get(i).getTitle() + ", Price: " + productList.get(i).getPrice() + ", Year: " + productList.get(i).getYear() + ", Genre: " + productList.get(i).getGenre());
 			}
 			
 		}

@@ -1,6 +1,6 @@
 package edu.mu;
 
-public class MediaProduct {
+public abstract class MediaProduct {
 	
 	protected String type;
 	protected String title;
