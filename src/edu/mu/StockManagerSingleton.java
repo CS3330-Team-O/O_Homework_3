@@ -51,11 +51,6 @@ public class StockManagerSingleton {
 			}	
 		}
 		
-		
-		public void printListOfMediaProduct(ArrayList<MediaProduct> productList) {
-			System.out.println(productList);
-		}
-		
 		//Referenced from: https://www.javatpoint.com/how-to-read-csv-file-in-java
 		public boolean initializeStock() {
 			String line = "";  
@@ -70,13 +65,13 @@ public class StockManagerSingleton {
 				Genre genre = MediaProduct.convertStringToGenre(mp[3]);
 				switch(mp[0]) {
 					case "CD":
-						CDRecordProduct cd = new CDRecordProduct(title, price, year, genre);
+						MediaProduct cd = new CDRecordProduct(title, price, year, genre);
 						inventory.add(cd);
 					case"Vinyl":
-						VinylRecordProduct vinyl = new VinylRecordProduct(title, price, year, genre);
+						MediaProduct vinyl = new VinylRecordProduct(title, price, year, genre);
 						inventory.add(vinyl);
 					case "Tape":
-						TapeRecordProduct tape = new TapeRecordProduct(title, price, year, genre);
+						MediaProduct tape = new TapeRecordProduct(title, price, year, genre);
 						inventory.add(tape);
 					default:
 						break;
@@ -97,7 +92,7 @@ public class StockManagerSingleton {
 			}
 			ArrayList<VinylRecordProduct> vinyl = new ArrayList<>();
 			for(int i=0; i<productList.size(); i++) {
-				VinylRecordProduct curr = productList.get(i);
+				VinylRecordProduct curr = (VinylRecordProduct) productList.get(i);
 				if("Vinyl".equals(curr.getType())) {
 					vinyl.add(curr);
 				}
@@ -114,7 +109,7 @@ public class StockManagerSingleton {
 			}
 			ArrayList<CDRecordProduct> cd = new ArrayList<>();
 			for(int i=0; i<productList.size(); i++) {
-				CDRecordProduct curr = productList.get(i);
+				CDRecordProduct curr = (CDRecordProduct) productList.get(i);
 				if("CD".equals(curr.getType())) {
 					cd.add(curr);
 				}
@@ -131,7 +126,7 @@ public class StockManagerSingleton {
 			
 			ArrayList<TapeRecordProduct> tape = new ArrayList<>();
 			for(int i=0; i<productList.size(); i++) {
-				TapeRecordProduct curr = productList.get(i);
+				TapeRecordProduct curr = (TapeRecordProduct) productList.get(i);
 				if("Tape".equals(curr.getType())) {
 					tape.add(curr);
 				}
